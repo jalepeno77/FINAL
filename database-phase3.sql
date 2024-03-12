@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS finaltest;
 
 USE finaltest;
 
-CREATE TABLE Members (
+CREATE TABLE `Members` (
     Member_ID INT AUTO_INCREMENT PRIMARY KEY,
     Email_Address VARCHAR(255) NOT NULL UNIQUE,
     Password VARCHAR(60) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE Members (
     Last_Name VARCHAR(60) NOT NULL
 );
 
-CREATE TABLE Addresses (
+CREATE TABLE `Addresses` (
     Address_ID INT AUTO_INCREMENT PRIMARY KEY,
     Line1 VARCHAR(60) NOT NULL,
     Line2 VARCHAR(60),
@@ -20,11 +20,6 @@ CREATE TABLE Addresses (
     Phone VARCHAR(12) NOT NULL,
     Customer_ID INT,
     FOREIGN KEY (Customer_ID) REFERENCES Members(Member_ID)
-);
-
-CREATE TABLE `API` (
-    API_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Endpoint_URL VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE `Images` (
@@ -39,12 +34,7 @@ CREATE TABLE `Route` (
     Description TEXT NOT NULL,
     Tire_Tread VARCHAR(10) NOT NULL,
     Distance DECIMAL(10, 2) NOT NULL,
-    Date_Added DATETIME,
-    Water_Access BOOLEAN NOT NULL,
-    API_ID INT,
-    IMG_ID INT,
-    FOREIGN KEY (API_ID) REFERENCES API(API_ID),
-    FOREIGN KEY (IMG_ID) REFERENCES Images(IMG_ID)
+    Water_Access BOOLEAN NOT NULL
 );
 
 CREATE TABLE `Administrators` (
@@ -54,3 +44,11 @@ CREATE TABLE `Administrators` (
     First_Name VARCHAR(255) NOT NULL,
     Last_Name VARCHAR(255) NOT NULL
 );
+
+INSERT INTO 'Route' VALUES ('Beginner', 'Lake Trail', 'Scenic trail around the lake.', 'Smooth', 3.5, true),('Intermediate', 'Forest Loop', 'Moderate difficulty loop trail through dense forest.', 'Moderate', 5.2, true),('Advanced', 'Mountain Summit Trail', 'Challenging trail leading to a scenic mountain summit.', 'Rugged', 10.8, false),('Expert', 'Rocky Ridge Trail', 'Difficult trail with rocky terrain and steep inclines.', 'Rocky', 8.7, false),
+('Beginner', 'River Path', 'Easy path along the river with picnic spots.', 'Gravel', 2.0, true);
+
+
+
+
+
