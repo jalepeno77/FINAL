@@ -8,12 +8,18 @@
   </head>
 
   <body>
-
-    <header>
+    <a href="#main" id="skip-link">Skip to main content</a>
+    <header role="banner">
       <h1>
-        <a href="<?php echo url_for('/index.php'); ?>">
-          <img class="bike-icon" src="<?php echo url_for('/images/USDOT_bicycle_symbol.svg') ?>" /><br />
-          Peak Pedaling
-        </a>
+        <a href="<?php echo url_for('/index.php'); ?>">Peak Pedaling</a>
       </h1>
+      <nav role="navigation">
+        <ul id="menu">
+          <li><a href="<?php echo url_for('/routes.php'); ?>">View Our Routes</a></li>
+          <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
+          <li><a href="<?php echo url_for('/detail.php'); ?>">Details</a></li>
+          <li><a href="<?php echo url_for('/detail.php'); ?>">Details</a></li>
+      </nav>
+      </p>
     </header>
+    

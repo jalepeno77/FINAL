@@ -29,7 +29,7 @@ CREATE TABLE `Images` (
 
 CREATE TABLE `Route` (
     Route_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Difficulty VARCHAR(10) NOT NULL UNIQUE,
+    Difficulty VARCHAR(10) NOT NULL,
     Route_Name VARCHAR(255) NOT NULL UNIQUE,
     Description TEXT NOT NULL,
     Tire_Tread VARCHAR(10) NOT NULL,
@@ -45,9 +45,11 @@ CREATE TABLE `Administrators` (
     Last_Name VARCHAR(255) NOT NULL
 );
 
-INSERT INTO 'Route' VALUES ('Beginner', 'Lake Trail', 'Scenic trail around the lake.', 'Smooth', 3.5, true),('Intermediate', 'Forest Loop', 'Moderate difficulty loop trail through dense forest.', 'Moderate', 5.2, true),('Advanced', 'Mountain Summit Trail', 'Challenging trail leading to a scenic mountain summit.', 'Rugged', 10.8, false),('Expert', 'Rocky Ridge Trail', 'Difficult trail with rocky terrain and steep inclines.', 'Rocky', 8.7, false),
+INSERT INTO route (Difficulty, Route_Name, Description, Tire_Tread, Distance, Water_Access) VALUES
+('Beginner', 'Lake Trail', 'Scenic trail around the lake.', 'Smooth', 3.5, true),('Intermediate', 'Forest Loop', 'Moderate difficulty loop trail through dense forest.', 'Moderate', 5.2, true),
+('Advanced', 'Mountain Summit Trail', 'Challenging trail leading to a scenic mountain summit.', 'Rugged', 10.8, false),
+('Expert', 'Rocky Ridge Trail', 'Difficult trail with rocky terrain and steep inclines.', 'Rocky', 8.7, false),
 ('Beginner', 'River Path', 'Easy path along the river with picnic spots.', 'Gravel', 2.0, true);
-
 
 
 

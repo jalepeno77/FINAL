@@ -2,13 +2,7 @@
 
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="main">
-
-  <ul id="menu">
-    <li><a href="<?php echo url_for('/routes.php'); ?>">View Our Routes</a></li>
-    <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
-  </ul>
-    
+<div id="main" role="main" tabindex="-1">
 </div>
 
 <?php $super_hero_image = 'AdobeStock_18040381_xlarge.jpeg'; ?>

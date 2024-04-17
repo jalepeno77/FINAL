@@ -1,5 +1,4 @@
-/* Site Colors:
-*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Sedan:ital@0;1&display=swap");
 
 html {
   height: 100%;
@@ -11,11 +10,14 @@ body {
   height: 100%;
   border: 0;
   font: 13px/15px Verdana, Arial, Helvetica, sans-serif;
-  background: #FFFFFF;
+  background-image: url('../images/winding_road.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
-  width: 980px;
+  font-family: 'Sedan', sans-serif;
+  width: auto;
   margin: 0 auto;
   padding: 0;
   text-align: left;
@@ -24,24 +26,23 @@ header {
 
 header h1 {
   margin: 50px 0 0 0;
-  text-align: center;
+  text-align: left;
 }
 
 header h1 a {
   text-decoration: none;
   color: #000;
   letter-spacing: 0.4em;
-}
-
-header h1 a img.bike-icon {
-  display: inline-block;
-  margin-bottom: 30px;
-  width: 75px;
+  background-color: #8B96AB;
+  font-weight: bold; 
+  padding: .5rem;
+  border-radius: 10px; 
+  box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
 }
 
 #main {
-  width: 980px;
-  height: 500px;
+  width: auto;
+  height: 1000px;
   margin: 0 auto;
   padding: 0;
 }
@@ -63,34 +64,39 @@ footer {
   width: 980px;
   margin: 0 auto;
   padding: 10px;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 
-ul#menu {
-  list-style: none;
-  overflow: hidden;
-  width: 485px;
+nav#menu {
+  display: flex;
+  justify-content: flex-start;
+  margin: 60px auto;
   padding: 0;
-  margin: 100px auto;
 }
 
-ul#menu li {
-  float: left;
-  margin: 25px;
+nav#menu li {
+  list-style: none;
 }
 
-ul#menu li a {
-  display: block;
-  width: 150px;
-  padding: 25px 20px;
-  text-align: center;
+nav#menu li a {
+  font-family: 'Sedan', sans-serif;
+  margin-right: 20px;
+  box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav#menu li a {
+  padding: 10px 20px;
   text-decoration: none;
-  color: #000;
-  border: 1px solid #000;
+  color: #1a1919;
+  background-color: #A4A244;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-ul#menu li a:hover {
-  background: #EEE;
+nav#menu li a:hover {
+  background-color: #A4A244;
 }
 
 div#page {
@@ -118,7 +124,6 @@ img.inset {
 table#inventory {
   margin-top: 30px;
   width: 980px;
-  border-collapse: collapse;
 }
 
 table#inventory tr th {

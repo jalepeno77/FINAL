@@ -19,7 +19,7 @@
 <?php $page_title = 'Detail: ' . $route->name(); ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="main">
+<div id="main" role="main" tabindex="-1">
 
   <a href="routes.php">Back to Trail Selection</a>
 

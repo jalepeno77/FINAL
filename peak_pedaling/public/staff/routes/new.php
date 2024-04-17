@@ -29,7 +29,7 @@ if(is_post_request()) {
 <?php $page_title = 'Create Route'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-<div id="content">
+<div id="content" role="main" tabindex="-1">
 
   <a class="back-link" href="<?php echo url_for('/staff/routes/index.php'); ?>">&laquo; Back to List</a>
 

@@ -12,7 +12,7 @@ $route = Route::find_by_id($id);
 <?php $page_title = 'Show Route: ' . h($route->name()); ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-<div id="content">
+<div id="content" role="main" tabindex="-1">
 
   <a class="back-link" href="<?php echo url_for('/staff/routes/index.php'); ?>">&laquo; Back to List</a>
 
@@ -22,8 +22,12 @@ $route = Route::find_by_id($id);
 
     <div class="attributes">
       <dl>
+        <dt>Route ID</dt>
+        <dd><?php echo h($route->Route_ID); ?></dd>
+      </dl>
+      <dl>
         <dt>Route Name</dt>
-        <dd><?php echo h($route->Route_name); ?></dd>
+        <dd><?php echo h($route->Route_Name); ?></dd>
       </dl>
       <dl>
         <dt>Difficulty</dt>

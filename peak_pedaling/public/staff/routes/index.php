@@ -10,7 +10,7 @@ $routes = Route::find_all();
 <?php $page_title = 'Routes'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-<div id="content">
+<div id="content" role="main" tabindex="-1">
   <div class="routes listing">
     <h1>Routes</h1>
 
@@ -51,16 +51,16 @@ $routes = Route::find_all();
 
       <?php foreach($routes as $route) { ?>
         <tr>
-          <td><?php echo h($route->id); ?></td>
-          <td><?php echo h($route->Route_name); ?></td>
+          <td><?php echo h($route->Route_ID); ?></td>
+          <td><?php echo h($route->Route_Name); ?></td>
           <td><?php echo h($route->Difficulty); ?></td>
           <td><?php echo h($route->Tire_Tread); ?></td>
           <td><?php echo h($route->Distance); ?></td>
           <td><?php echo h($route->Water_Access); ?></td>
           <td><?php echo h($route->Description); ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/routes/show.php?id=' . h(u($route->id))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/routes/edit.php?id=' . h(u($route->id))); ?>">Edit</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/routes/delete.php?id=' . h(u($route->id))); ?>">Delete</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/routes/show.php?id=' . h(u($route->Route_ID))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/routes/edit.php?id=' . h(u($route->Route_ID))); ?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/routes/delete.php?id=' . h(u($route->Route_ID))); ?>">Delete</a></td>
     	  </tr>
         
       <?php } ?>

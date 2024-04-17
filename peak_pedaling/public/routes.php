@@ -3,7 +3,7 @@
 <?php $page_title = 'Inventory'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="main">
+<div id="main" role="main" tabindex="-1">
 
   <div id="page">
     <div class="intro">

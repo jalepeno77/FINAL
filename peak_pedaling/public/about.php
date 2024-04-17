@@ -3,7 +3,7 @@
 <?php $page_title = 'About Us'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="main">
+<div id="main"  role="main" tabindex="-1">
 
   <div id="page" class="narrow">
     <h2>About Us</h2>
