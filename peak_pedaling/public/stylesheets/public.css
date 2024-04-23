@@ -13,19 +13,49 @@ body {
   background-image: url('../images/winding_road.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#skip-link {
+  background-color: #000;
+  border: #fff double 6px;
+  color: #fff;
+  left: 0;
+  padding: .5rem;
+  position: absolute;
+  text-decoration: none;
+  top: -999px;
+}
+
+#main {
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: linear-gradient(90deg, #A4A244 0%, #8B96AB 100%);
+  opacity: .8;
+  min-height: 600px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 header {
   font-family: 'Sedan', sans-serif;
-  width: auto;
-  margin: 0 auto;
+  width: 100%;
   padding: 0;
   text-align: left;
   color: #FFFFFF;
+  background-color: #8B96AB;
+  box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
+  padding: 15px 0 0 0;
+  opacity: .8;
 }
 
 header h1 {
-  margin: 50px 0 0 0;
+  margin: 0;
   text-align: left;
 }
 
@@ -35,16 +65,9 @@ header h1 a {
   letter-spacing: 0.4em;
   background-color: #8B96AB;
   font-weight: bold; 
-  padding: .5rem;
-  border-radius: 10px; 
-  box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
-}
-
-#main {
-  width: auto;
-  height: 1000px;
-  margin: 0 auto;
-  padding: 0;
+  padding: .3rem;
+  text-shadow:
+    -1px -1px 0 #ffffff;
 }
 
 .expanding-wrapper {
@@ -55,8 +78,14 @@ header h1 a {
   min-width: 980px;
 }
 
-img#super-hero-image {
-  width: 100%;
+img#peak-home {
+  height: 100px;
+  width: 100px;
+  margin: 0 0 0 0;
+  padding: 0;
+  border: 0;
+  float: left;
+  box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
 }
 
 footer {
@@ -67,27 +96,29 @@ footer {
   background-color: #fff;
 }
 
-nav#menu {
+nav #menu {
   display: flex;
   justify-content: flex-start;
-  margin: 60px auto;
+  margin: 20px auto;
   padding: 0;
 }
 
-nav#menu li {
+nav #menu li {
   list-style: none;
 }
 
-nav#menu li a {
+nav #menu li a {
   font-family: 'Sedan', sans-serif;
   margin-right: 20px;
   box-shadow: 10px 10px 5px rgba(4, 4, 4, 0.3);
   font-size: 16px;
   font-weight: bold;
+  text-shadow:
+  -1px -1px 0 #ffffff;
 }
 
-nav#menu li a {
-  padding: 10px 20px;
+nav #menu li a {
+  padding: .3rem;
   text-decoration: none;
   color: #1a1919;
   background-color: #A4A244;
@@ -95,12 +126,12 @@ nav#menu li a {
   transition: background-color 0.3s ease;
 }
 
-nav#menu li a:hover {
-  background-color: #A4A244;
+nav #menu li a:hover {
+  background-color: #ffffff;
 }
 
 div#page {
-  margin: 60px auto;
+  margin: 0;
 }
 
 div#page.narrow {
@@ -120,6 +151,39 @@ img.inset {
   width: 150px;
   margin-right: 20px;
 }
+
+table {
+  border: rgb(0, 0, 0) solid 1px;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+caption {
+  font-style: italic;
+  margin: .25rem;
+  text-align: left;
+}
+
+th,
+td {
+  border: rgb(0, 0, 0) solid 1px;
+  padding: .5rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: #333;
+  color: rgb(255, 255, 255)
+}
+
+tr:nth-of-type(even) {
+  background-color: #f5f5dc;
+}
+
+tr:nth-of-type(odd) {
+  background-color: #e0e0c8;
+}
+
 
 table#inventory {
   margin-top: 30px;

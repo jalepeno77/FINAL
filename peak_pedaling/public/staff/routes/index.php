@@ -18,36 +18,22 @@ $routes = Route::find_all();
       <a class="action" href="<?php echo url_for('/staff/routes/new.php'); ?>">Add Route</a>
     </div>
 
-  	<!-- <table class="list">
-      <tr>
-        <th>ID</th>
-        <th>Brand</th>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Category</th>
-        <th>Gender</th>
-        <th>Color</th>
-        <th>Price</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr> -->
-
       <table class="list">
-      <tr>
-        <th>ID</th>
-        <th>Route Name</th>
-        <th>Difficulty</th>
-        <th>Tire Tread</th>
-        <th>Distance</th>
-        <th>Water Access</th>
-        <th>Date Added</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr>
+        <caption>Details</caption>
+        <tr>
+          <th>ID</th>
+          <th>Route Name</th>
+          <th>Difficulty</th>
+          <th>Tire Tread</th>
+          <th>Distance</th>
+          <th>Water Access</th>
+          <th>Date Added</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
 
       <?php foreach($routes as $route) { ?>
         <tr>

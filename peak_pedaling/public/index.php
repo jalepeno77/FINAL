@@ -5,6 +5,6 @@
 <div id="main" role="main" tabindex="-1">
 </div>
 
-<?php $super_hero_image = 'AdobeStock_18040381_xlarge.jpeg'; ?>
+<?php $peak_home= 'peak_home_page.jpg'; ?>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
