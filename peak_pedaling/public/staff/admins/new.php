@@ -8,7 +8,7 @@ if(is_post_request()) {
 
   // Create record using post parameters
   $args = $_POST['admin'];
-  $admin = new Admin($args);
+  $admin = new Administrator($args);
   $result = $admin->save();
 
   if($result === true) {
@@ -21,7 +21,7 @@ if(is_post_request()) {
 
 } else {
   // display the form
-  $admin = new Admin;
+  $admin = new Administrator();
 }
 
 ?>

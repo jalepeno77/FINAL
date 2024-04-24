@@ -37,7 +37,7 @@ $routes = Route::find_all();
         <td><?php echo $route->Tire_Tread; ?></td>
         <td><?php echo $route->Distance; ?></td>
         <td><?php echo $route->Water_Access; ?></td>
-        <td><a href="<?php echo url_for('/detail.php?Route_ID=' . $route->Route_ID); ?>">View</a></td>
+        <td><a href="<?php echo url_for("/detail.php?Route_ID=" . $route->Route_ID); ?>">View</a></td>
       </tr>
       <?php } ?>
 

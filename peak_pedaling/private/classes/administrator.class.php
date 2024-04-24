@@ -15,19 +15,19 @@ class Administrator extends DatabaseObject {
   protected $password_required = true;
 
   public function __construct($args=[]) {
-    $this->email = $args['email'] ?? '';
+    $this->Email_Address = $args['email'] ?? '';
     $this->Password = $args['Password'] ?? '';
-    $this->first_name = $args['first_name'] ?? '';
-    $this->last_name = $args['last_name'] ?? '';
+    $this->First_Name = $args['first_name'] ?? '';
+    $this->Last_Name = $args['last_name'] ?? '';
     $this->confirm_password = $args['confirm_password'] ?? '';
   }
 
   public function full_name() {
-    return $this->first_name . " " . $this->last_name;
+    return $this->First_Name . " " . $this->Last_Name;
   }
 
   protected function set_hashed_password() {
-    $this->hashed_password = password_hash($this->password, PASSWORD_BCRYPT);
+    $this->hashed_password = password_hash($this->Password, PASSWORD_BCRYPT);
   }
 
   public function verify_password($password) {
@@ -53,52 +53,44 @@ class Administrator extends DatabaseObject {
   protected function validate() {
     $this->errors = [];
 
-    if(is_blank($this->first_name)) {
+    if(is_blank($this->First_Name)) {
       $this->errors[] = "First name cannot be blank.";
-    } elseif (!has_length($this->first_name, array('min' => 2, 'max' => 255))) {
+    } elseif (!has_length($this->First_Name, array('min' => 2, 'max' => 255))) {
       $this->errors[] = "First name must be between 2 and 255 characters.";
     }
 
-    if(is_blank($this->last_name)) {
+    if(is_blank($this->Last_Name)) {
       $this->errors[] = "Last name cannot be blank.";
-    } elseif (!has_length($this->last_name, array('min' => 2, 'max' => 255))) {
+    } elseif (!has_length($this->Last_Name, array('min' => 2, 'max' => 255))) {
       $this->errors[] = "Last name must be between 2 and 255 characters.";
     }
 
-    if(is_blank($this->email)) {
+    if(is_blank($this->Email_Address)) {
       $this->errors[] = "Email cannot be blank.";
-    } elseif (!has_length($this->email, array('max' => 255))) {
+    } elseif (!has_length($this->Email_Address, array('max' => 255))) {
       $this->errors[] = "Last name must be less than 255 characters.";
-    } elseif (!has_valid_email_format($this->email)) {
+    } elseif (!has_valid_email_format($this->Email_Address)) {
       $this->errors[] = "Email must be a valid format.";
     }
 
-    if(is_blank($this->username)) {
-      $this->errors[] = "Username cannot be blank.";
-    } elseif (!has_length($this->username, array('min' => 8, 'max' => 255))) {
-      $this->errors[] = "Username must be between 8 and 255 characters.";
-    } elseif (!has_unique_username($this->username, $this->id ?? 0)) {
-      $this->errors[] = "Username not allowed. Try another.";
-    }
-
     if($this->password_required) {
-      if(is_blank($this->password)) {
+      if(is_blank($this->Password)) {
         $this->errors[] = "Password cannot be blank.";
-      } elseif (!has_length($this->password, array('min' => 12))) {
+      } elseif (!has_length($this->Password, array('min' => 12))) {
         $this->errors[] = "Password must contain 12 or more characters";
-      } elseif (!preg_match('/[A-Z]/', $this->password)) {
+      } elseif (!preg_match('/[A-Z]/', $this->Password)) {
         $this->errors[] = "Password must contain at least 1 uppercase letter";
-      } elseif (!preg_match('/[a-z]/', $this->password)) {
+      } elseif (!preg_match('/[a-z]/', $this->Password)) {
         $this->errors[] = "Password must contain at least 1 lowercase letter";
-      } elseif (!preg_match('/[0-9]/', $this->password)) {
+      } elseif (!preg_match('/[0-9]/', $this->Password)) {
         $this->errors[] = "Password must contain at least 1 number";
-      } elseif (!preg_match('/[^A-Za-z0-9\s]/', $this->password)) {
+      } elseif (!preg_match('/[^A-Za-z0-9\s]/', $this->Password)) {
         $this->errors[] = "Password must contain at least 1 symbol";
       }
 
       if(is_blank($this->confirm_password)) {
         $this->errors[] = "Confirm password cannot be blank.";
-      } elseif ($this->password !== $this->confirm_password) {
+      } elseif ($this->Password !== $this->confirm_password) {
         $this->errors[] = "Password and confirm password must match.";
       }
     }

@@ -153,9 +153,10 @@ img.inset {
 }
 
 table {
-  border: rgb(0, 0, 0) solid 1px;
+  border: rgb(0, 0, 0) solid 2px;
   border-collapse: collapse;
   vertical-align: top;
+  -moz-border-radius: 20px;
 }
 
 caption {

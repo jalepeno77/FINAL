@@ -4,7 +4,7 @@
 <?php
 
 // Find all admins
-$admins = Admin::find_all();
+$admins = Administrator::find_all();
 
 ?>
 <?php $page_title = 'Admins'; ?>

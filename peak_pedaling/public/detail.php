@@ -30,27 +30,27 @@
       <div class="attributes">
         <dl>
           <dt>Route ID</dt>
-          <dd><?php echo $route->Route_ID; ?></dd>
+          <dd><?php echo h($route->Route_ID); ?></dd>
         </dl>
         <dl>
           <dt>Difficulty</dt>
-          <dd><?php echo $route->Difficulty; ?></dd>
+          <dd><?php echo h($route->difficulty()); ?></dd>
         </dl>
         <dl>
           <dt>Description</dt>
-          <dd><?php echo $route->Description; ?></dd>
+          <dd><?php echo h($route->Description); ?></dd>
         </dl>
         <dl>
           <dt>Tire Tread</dt>
-          <dd><?php echo $route->Tire_Tread; ?></dd>
+          <dd><?php echo h($route->tire()); ?></dd>
         </dl>
         <dl>
           <dt>Distance</dt>
-          <dd><?php echo $route->Distance; ?></dd>
+          <dd><?php echo h($route->Distance); ?></dd>
         </dl>
         <dl>
           <dt>Water Access</dt>
-          <dd><?php echo $route->Water_Access; ?></dd>
+          <dd><?php echo h($route->Water_Access); ?></dd>
         </dl>
 
   </div>

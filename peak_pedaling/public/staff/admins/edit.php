@@ -8,7 +8,7 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/admins/index.php'));
 }
 $id = $_GET['id'];
-$admin = Admin::find_by_id($id);
+$admin = Administrator::find_by_id($id);
 if($admin == false) {
   redirect_to(url_for('/staff/admins/index.php'));
 }
