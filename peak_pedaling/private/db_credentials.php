@@ -13,6 +13,6 @@
 define("DB_SERVER", "localhost");
 define("DB_USER", "geronimo");
 define("DB_PASS", "1234567");
-define("DB_NAME", "Routetest");
+define("DB_NAME", "routetest");
 
 ?>

@@ -30,7 +30,7 @@ class Session {
   }
 
   public function logout() {
-    unset($_SESSION['Admin_ID']);
+    unset($_SESSION['id']);
     unset($_SESSION['Email_Address']);
     unset($_SESSION['last_login']);
     unset($this->id);

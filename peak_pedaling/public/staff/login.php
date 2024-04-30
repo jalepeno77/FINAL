@@ -48,8 +48,8 @@ if(is_post_request()) {
   <form action="login.php" method="post">
     <label for="Email Address">Email Address:</label><br>
     <input type="text" name="Email_Address" value="<?php echo h($Email_Address); ?>"><br>
-    Password:<br />
-    <input type="password" name="Password" value=""><br>
+    <label for="Password">Password:</label><br>
+    <input type="password" name="Password" value="<?php echo h($Password); ?>"><br>
     <input type="submit" name="submit" value="Submit">
   </form>
 

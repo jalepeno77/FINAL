@@ -4,7 +4,7 @@
 
   // Get requested ID
 
-  $id = $_GET['Route_ID'] ?? false;
+  $id = $_GET['id'] ?? false;
 
   if(!$id) {
     redirect_to('routes.php');
