@@ -3,9 +3,9 @@
 class Route extends DatabaseObject {
 
   static protected $table_name = 'Route';
-  static protected $db_columns = ['Route_ID', 'Difficulty', 'Route_Name', 'Description', 'Tire_Tread', 'Distance', 'Water_Access'];
+  static protected $db_columns = ['id', 'Difficulty', 'Route_Name', 'Description', 'Tire_Tread', 'Distance', 'Water_Access'];
 
-  public $Route_ID;
+  public $id;
   public $Difficulty;
   public $Route_Name;
   public $Description;
@@ -14,7 +14,7 @@ class Route extends DatabaseObject {
   public $Water_Access;
   
   public function __construct($args=[]) {
-    $this->Route_ID = $args['Route_ID'] ?? '';
+    $this->id = $args['id'] ?? '';
     $this->Difficulty = $args['Difficulty'] ?? '';
     $this->Route_Name = $args['Route_Name'] ?? '';
     $this->Description = $args['Description'] ?? '';

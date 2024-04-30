@@ -2,13 +2,13 @@
 require_once('../../private/initialize.php');
 
 $errors = [];
-$username = '';
-$password = '';
+$Email_Address = '';
+$Password = '';
 
 if(is_post_request()) {
 
-  $username = $_POST['Email_Address'] ?? '';
-  $password = $_POST['Password'] ?? '';
+  $Email_Address = $_POST['Email_Address'] ?? '';
+  $Password = $_POST['Password'] ?? '';
 
   // Validations
   if(is_blank($Email_Address)) {
@@ -20,9 +20,9 @@ if(is_post_request()) {
 
   // if there were no errors, try to login
   if(empty($errors)) {
-    $admin = Admin::find_by_email($Email_Address);
+    $admin = Administrator::find_by_email($Email_Address);
     // test if admin found and password is correct
-    if($admin != false && $admin->verify_password($password)) {
+    if($admin != false && $admin->verify_password($Password)) {
       // Mark admin as logged in
       $session->login($admin);
       redirect_to(url_for('/staff/index.php'));
@@ -46,11 +46,11 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="login.php" method="post">
-    Username:<br />
-    <input type="text" name="email" value="<?php echo h($Email_Address); ?>" /><br />
+    <label for="Email Address">Email Address:</label><br>
+    <input type="text" name="Email_Address" value="<?php echo h($Email_Address); ?>"><br>
     Password:<br />
-    <input type="password" name="password" value="" /><br />
-    <input type="submit" name="submit" value="Submit"  />
+    <input type="password" name="Password" value=""><br>
+    <input type="submit" name="submit" value="Submit">
   </form>
 
 </div>

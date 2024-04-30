@@ -2,7 +2,7 @@
 
 class Session {
 
-  private $Admin_ID;
+  private $id;
   public $Email_Address;
   private $last_login;
 
@@ -17,7 +17,7 @@ class Session {
     if($admin) {
       // prevent session fixation attacks
       session_regenerate_id();
-      $this->Admin_ID = $_SESSION['Admin_ID'] = $admin->Admin_ID;
+      $this->id = $_SESSION['id'] = $admin->id;
       $this->Email_Address = $_SESSION['Email_Address'] = $admin->Email_Address;
       $this->last_login = $_SESSION['last_login'] = time();
     }
@@ -26,23 +26,23 @@ class Session {
 
   public function is_logged_in() {
     // return isset($this->admin_id);
-    return isset($this->Admin_ID) && $this->last_login_is_recent();
+    return isset($this->id) && $this->last_login_is_recent();
   }
 
   public function logout() {
     unset($_SESSION['Admin_ID']);
     unset($_SESSION['Email_Address']);
     unset($_SESSION['last_login']);
-    unset($this->Admin_ID);
+    unset($this->id);
     unset($this->Email_Address);
     unset($this->last_login);
     return true;
   }
 
   private function check_stored_login() {
-    if(isset($_SESSION['admin_id'])) {
-      $this->admin_id = $_SESSION['Admin_ID'];
-      $this->username = $_SESSION['Email_Address'];
+    if(isset($_SESSION['id'])) {
+      $this->id = $_SESSION['id'];
+      $this->Email_Address= $_SESSION['Email_Address'];
       $this->last_login = $_SESSION['last_login'];
     }
   }

@@ -30,7 +30,7 @@
       <div class="attributes">
         <dl>
           <dt>Route ID</dt>
-          <dd><?php echo h($route->Route_ID); ?></dd>
+          <dd><?php echo h($route->id); ?></dd>
         </dl>
         <dl>
           <dt>Difficulty</dt>

@@ -98,8 +98,8 @@
   // * For new records, provide only the username.
   // * For existing records, provide current ID as second argument
   //   has_unique_username('johnqpublic', 4)
-  function has_unique_username($username, $current_id="0") {
-    $admin = Admin::find_by_username($username);
+  function has_unique_username($value, $current_id="0") {
+    $admin = Administrator::find_by_email($value);
     if($admin === false || $admin->id == $current_id) {
       // is unique
       return true;

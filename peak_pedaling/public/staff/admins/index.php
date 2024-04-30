@@ -30,13 +30,13 @@ $admins = Administrator::find_all();
 
       <?php foreach($admins as $admin) { ?>
         <tr>
-          <td><?php echo h($admin->Admin_ID); ?></td>
+          <td><?php echo h($admin->id); ?></td>
           <td><?php echo h($admin->First_Name); ?></td>
           <td><?php echo h($admin->Last_Name); ?></td>
           <td><?php echo h($admin->Email_Address); ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin->Admin_ID))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin->Admin_ID))); ?>">Edit</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin->Admin_ID))); ?>">Delete</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin->id))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin->id))); ?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin->id))); ?>">Delete</a></td>
     	  </tr>
       <?php } ?>
   	</table>

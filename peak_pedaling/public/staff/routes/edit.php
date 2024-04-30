@@ -4,10 +4,10 @@ require_once('../../../private/initialize.php');
 
 require_login();
 
-if(!isset($_GET['Route_ID'])) {
+if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/routes/index.php'));
 }
-$id = $_GET['Route_ID'];
+$id = $_GET['id'];
 $route = Route::find_by_id($id);
 if($route == false) {
   redirect_to(url_for('/staff/routes/index.php'));

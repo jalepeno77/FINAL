@@ -4,10 +4,10 @@ require_once('../../../private/initialize.php');
 
 require_login();
 
-if(!isset($_GET['Admin_ID'])) {
+if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/admins/index.php'));
 }
-$id = $_GET['Admin_ID'];
+$id = $_GET['id'];
 $admin = Administrator::find_by_id($id);
 if($admin == false) {
   redirect_to(url_for('/staff/admins/index.php'));

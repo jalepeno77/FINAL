@@ -23,7 +23,7 @@ $route = Route::find_by_id($id);
     <div class="attributes">
       <dl>
         <dt>Route ID</dt>
-        <dd><?php echo h($route->Route_ID); ?></dd>
+        <dd><?php echo h($route->id); ?></dd>
       </dl>
       <dl>
         <dt>Route Name</dt>

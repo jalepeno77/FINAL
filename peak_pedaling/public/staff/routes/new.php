@@ -12,7 +12,7 @@ if(is_post_request()) {
   $result = $Route->save();
 
   if($result === true) {
-    $new_id = $route->Route_ID;
+    $new_id = $route->id;
     $session->message('The Route was created successfully.');
     redirect_to(url_for('/staff/routes/show.php?id=' . $new_id));
   } else {

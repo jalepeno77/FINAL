@@ -3,9 +3,9 @@
 class Administrator extends DatabaseObject {
 
   static protected $table_name = "Administrators";
-  static protected $db_columns = ['Admin_Id', 'Email_Address', 'hashed_password', 'First_Name', 'Last_Name'];
+  static protected $db_columns = ['id', 'Email_Address', 'hashed_password', 'First_Name', 'Last_Name'];
 
-  public $Admin_ID;
+  public $id;
   public $Email_Address;
   public $Password;
   public $First_Name;
@@ -15,10 +15,10 @@ class Administrator extends DatabaseObject {
   protected $password_required = true;
 
   public function __construct($args=[]) {
-    $this->Email_Address = $args['email'] ?? '';
+    $this->Email_Address = $args['Email_Address'] ?? '';
     $this->Password = $args['Password'] ?? '';
-    $this->First_Name = $args['first_name'] ?? '';
-    $this->Last_Name = $args['last_name'] ?? '';
+    $this->First_Name = $args['First_Name'] ?? '';
+    $this->Last_Name = $args['Last_Name'] ?? '';
     $this->confirm_password = $args['confirm_password'] ?? '';
   }
 
@@ -100,7 +100,7 @@ class Administrator extends DatabaseObject {
 
   static public function find_by_email($Email_Address) {
     $sql = "SELECT * FROM " . static::$table_name . " ";
-    $sql .= "WHERE username='" . self::$database->escape_string($Email_Address) . "'";
+    $sql .= "WHERE Email_Address='" . self::$database->escape_string($Email_Address) . "'";
     $obj_array = static::find_by_sql($sql);
     if(!empty($obj_array)) {
       return array_shift($obj_array);

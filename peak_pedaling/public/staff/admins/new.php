@@ -12,7 +12,7 @@ if(is_post_request()) {
   $result = $admin->save();
 
   if($result === true) {
-    $new_id = $admin->Admin_ID;
+    $new_id = $admin->id;
     $session->message('The admin was created successfully.');
     redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
   } else {
